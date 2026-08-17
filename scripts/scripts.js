@@ -21,7 +21,7 @@ filterButtons.forEach((button) => {
       if (selectedCategory === "all" || selectedCategory === itemCategory) {
         item.style.display = "grid";
       } else {
-        item.classList.add("menu-item--hidden");
+         item.style.display = "none";
       }
     });
   });
