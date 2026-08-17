@@ -388,6 +388,149 @@ section[aria-labelledby="hero-title"] img {
   border-color: var(--color-accent);
 }
 /* ========================================
+   MENU
+   ======================================== */
+
+#menu {
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---------- Header ---------- */
+
+.menu-header {
+  display: grid;
+  gap: 2rem;
+
+  margin-bottom: 3rem;
+}
+
+.section-label {
+  margin-bottom: 0.75rem;
+
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.menu-header h2 {
+  max-width: 650px;
+}
+
+.menu-intro {
+  max-width: 420px;
+}
+
+/* ---------- Filters ---------- */
+
+.menu-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.menu-filter {
+  padding: 0.65rem 1rem;
+
+  border: 1px solid var(--color-border);
+  background: transparent;
+
+  color: var(--color-primary);
+
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.menu-filter:hover,
+.menu-filter:focus-visible,
+.menu-filter--active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+
+  color: var(--color-background);
+}
+
+/* ---------- Menu list ---------- */
+
+.menu-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---------- Menu item ---------- */
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+
+  padding: 1.75rem 0;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ---------- Item content ---------- */
+
+.menu-item-content {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.menu-item-category {
+  display: block;
+
+  margin-bottom: 0.35rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.menu-item h3 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.menu-item p {
+  max-width: 500px;
+
+  margin: 0.5rem 0 0;
+
+  font-size: 0.85rem;
+}
+
+/* ---------- Price ---------- */
+
+.menu-item-price {
+  align-self: start;
+
+  padding-top: 1.45rem;
+
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+}
+/* ========================================
    7. SPECIALTIES
    ======================================== */
 
@@ -395,9 +538,9 @@ section[aria-labelledby="hero-title"] img {
   border-top: 1px solid var(--color-border);
 }
 
-#menu > header {
+/*#menu > header {
   max-width: 700px;
-}
+}*/
 
 #menu > div {
   display: grid;
@@ -672,7 +815,7 @@ body > footer nav a {
   body > footer > p {
     text-align: right;
   }
-  
+
   /* Featured Coffee */
 
   .featured-coffee-header {
@@ -699,6 +842,30 @@ body > footer nav a {
 
   .featured-coffee-card:not(.featured-coffee-card--large) {
     grid-column: 2;
+  }
+  /* Menu */
+
+  .menu-header {
+    grid-template-columns: 2fr 1fr;
+    align-items: end;
+
+    margin-bottom: 2.5rem;
+  }
+
+  .menu-header h2 {
+    max-width: none;
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 0.95;
+  }
+
+  .menu-item {
+    padding: 2rem 0;
+  }
+  .menu-item--hidden {
+    display: none;
+  }
+  .menu-item h3 {
+    font-size: 1.6rem;
   }
 }
 
