@@ -2,6 +2,21 @@
 import { menuItemsList } from "./data/menu-data.js";
 import { coffeeOrigins } from "./data/origins-data.js";
 import { renderOrigins } from "./components/origins.js";
+import { navigationItems } from "./data/navegation-data.js";
+import { renderNavigation } from "./components/navigation.js";
+
+// ========================================
+// NAVIGATION
+// ========================================
+
+const navigationContainer = document.querySelector("#main-navigation");
+
+renderNavigation(navigationItems, navigationContainer);
+
+// ========================================
+// MENU
+// ========================================
+
 const menuList = document.querySelector("#menu-list");
 
 function renderMenu(items) {
