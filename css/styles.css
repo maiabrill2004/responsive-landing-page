@@ -717,6 +717,239 @@ body > footer nav a {
 }
 
 /* ========================================
+   COFFEE ORIGINS
+   ======================================== */
+
+#origins {
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---------- Header ---------- */
+
+.origins-header {
+  display: grid;
+  gap: 2rem;
+
+  margin-bottom: 3rem;
+}
+
+.origins-header h2 {
+  max-width: 650px;
+}
+
+.origins-intro {
+  max-width: 420px;
+}
+
+/* ---------- Filters ---------- */
+
+.origins-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.origin-filter {
+  padding: 0.65rem 1rem;
+
+  border: 1px solid var(--color-border);
+  background: transparent;
+
+  color: var(--color-primary);
+
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.origin-filter:hover,
+.origin-filter:focus-visible,
+.origin-filter--active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+
+  color: var(--color-background);
+}
+
+/* ---------- Origins list ---------- */
+
+.origins-list {
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---------- Origin item ---------- */
+
+.origin-item {
+  display: grid;
+  gap: 2rem;
+
+  padding: 2rem 0;
+
+  border-bottom: 1px solid var(--color-border);
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+/* Animation state */
+
+.origin-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ---------- Staggered animation ---------- */
+
+.origin-item:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.origin-item:nth-child(3) {
+  transition-delay: 200ms;
+}
+
+.origin-item:nth-child(4) {
+  transition-delay: 300ms;
+}
+
+.origin-item:nth-child(5) {
+  transition-delay: 400ms;
+}
+
+.origin-item:nth-child(6) {
+  transition-delay: 500ms;
+}
+/* ---------- Image ---------- */
+
+.origin-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background-color: var(--color-border);
+}
+
+.origin-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 800ms cubic-bezier(0.2, 0.6, 0.2, 1),
+    filter 800ms ease;
+}
+
+/* Hover */
+
+.origin-item:hover .origin-image img {
+  transform: scale(1.04);
+}
+
+/* ---------- Content ---------- */
+
+.origin-content {
+  display: grid;
+  gap: 2rem;
+}
+
+/* ---------- Location ---------- */
+
+.origin-continent {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.origin-location h3 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.origin-region {
+  margin: 0.5rem 0 0;
+
+  font-size: 0.8rem;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- Description ---------- */
+
+.origin-description {
+  max-width: 500px;
+
+  margin: 0 0 1rem;
+
+  font-size: 0.9rem;
+}
+
+/* ---------- Flavor notes ---------- */
+
+.origin-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.origin-notes li {
+  padding: 0.4rem 0.65rem;
+
+  border: 1px solid var(--color-border);
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.origin-item:hover .origin-notes li {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+/* ========================================
    12. TABLET
    ======================================== */
 
@@ -753,6 +986,19 @@ body > footer nav a {
   }
 }
 
+@media (max-width: 899px) {
+  .origin-item {
+    padding: 2.5rem 0;
+  }
+
+  .origin-image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .origin-location h3 {
+    font-size: clamp(2.3rem, 10vw, 3.5rem);
+  }
+}
 /* ========================================
    13. DESKTOP
    ======================================== */
@@ -867,6 +1113,52 @@ body > footer nav a {
   .menu-item h3 {
     font-size: 1.6rem;
   }
+  /* ========================================
+   COFFEE ORIGINS — DESKTOP
+   ======================================== */
+
+  .origins-header {
+    grid-template-columns: 2fr 1fr;
+
+    align-items: end;
+
+    margin-bottom: 2.5rem;
+  }
+
+  .origins-header h2 {
+    max-width: none;
+
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 0.95;
+  }
+
+  /* Origin */
+
+  .origin-item {
+    grid-template-columns: minmax(260px, 0.8fr) 1.2fr;
+
+    gap: 4rem;
+
+    align-items: center;
+
+    padding: 3rem 0;
+  }
+
+  .origin-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .origin-content {
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 3rem;
+
+    align-items: center;
+  }
+
+  .origin-location h3 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+  }
 }
 
 /* ========================================
@@ -897,5 +1189,19 @@ body > footer nav a {
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+  .origin-item {
+    opacity: 1;
+    transform: none;
+
+    transition: none;
+  }
+
+  .origin-image img {
+    transition: none;
+  }
+
+  .origin-item:hover .origin-image img {
+    transform: none;
   }
 }
